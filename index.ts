@@ -2,7 +2,7 @@ import figlet from "figlet";
 import index from "./index.html";
 
 const server = Bun.serve({
-  port: 3000,
+  port: process.env.PORT,
   routes: {
     "/": index,
     "/figlet": () => {
@@ -13,4 +13,3 @@ const server = Bun.serve({
 });
 
 console.log(`Listening on ${server.url}`);
-
